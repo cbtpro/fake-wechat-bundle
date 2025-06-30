@@ -1,0 +1,6 @@
+[submodule "fake-wechat-server"]
+	path = fake-wechat-server
+	url = git@github.com:cbtpro/fake-wechat-server.git
+[submodule "fake-wechat"]
+	path = fake-wechat
+	url = git@github.com:cbtpro/fake-wechat.git
