@@ -22,6 +22,8 @@ git submodule add git@github.com:cbtpro/fake-wechat.git
 
 ## 更新 Submodule
 
+### 初始化与基础更新
+
 ```shell
 # 初始化所有 submodule（首次克隆后需要执行）
 git submodule init
@@ -29,16 +31,47 @@ git submodule init
 # 更新所有 submodule 到父项目中记录的 commit 版本
 git submodule update
 
+# 递归更新所有 submodule（推荐，包含初始化）
+git submodule update --init --recursive
+```
+
+### 拉取远程最新代码
+
+当 submodule 的远程仓库有新代码提交时，使用以下命令拉取最新代码：
+
+```shell
 # 更新所有 submodule 到各自远程仓库的最新提交
 git submodule update --remote
 
 # 更新单个 submodule（例如 fake-wechat-server）
 git submodule update --remote fake-wechat-server
+```
 
-# 递归更新所有 submodule（推荐）
-git submodule update --init --recursive
+### 手动进入 submodule 目录拉取
 
-# 更新后提交变更
+```shell
+# 进入 submodule 目录
+cd fake-wechat-server
+
+# 拉取最新代码
+git pull origin main
+
+# 返回父项目
+cd ..
+```
+
+### 更新后提交变更
+
+更新完成后，父项目的 gitlink 引用会发生变化，需要提交：
+
+```shell
+# 更新到远程最新版本
+git submodule update --remote
+
+# 查看变更
+git status
+
+# 提交 submodule 引用的变更
 git add .
 git commit -m "Update submodules to latest versions"
 ```
