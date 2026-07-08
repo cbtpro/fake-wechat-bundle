@@ -60,11 +60,11 @@ git submodule add git@github.com:cbtpro/fake-wechat.git
 # 进入子模块目录
 cd fake-wechat-server
 
-# 使用 npm 安装依赖（子模块独立模式）
-npm install
+# 使用 pnpm 安装依赖（子模块独立模式）
+pnpm install
 
 # 启动开发
-npm run start:dev
+pnpm run start:dev
 ```
 
 ## 更新 Submodule
@@ -122,6 +122,72 @@ git status
 git add .
 git commit -m "Update submodules to latest versions"
 ```
+
+## 提交 Submodule 代码
+
+### 开发流程
+
+```shell
+# 1. 进入 submodule 目录
+cd fake-wechat
+
+# 2. 确保在分支上（不是 detached HEAD）
+git checkout main
+
+# 3. 拉取最新代码
+git pull origin main
+
+# 4. 进行开发...
+
+# 5. 提交并推送
+git add .
+git commit -m "Your commit message"
+git push origin main
+
+# 6. 更新父仓库的 submodule 指针
+cd ..
+git add fake-wechat
+git commit -m "Update fake-wechat submodule"
+git push
+```
+
+### 处理 HEAD detached 问题
+
+当通过 `git submodule update` 更新后，submodule 可能处于 **HEAD detached**（游离 HEAD）状态，此时无法 push 代码：
+
+```shell
+# 查看当前状态
+git status  # 如果显示 HEAD detached at <commit>，说明处于游离状态
+
+# 查看可用分支
+git branch -a
+
+# 切换到开发分支
+git checkout main
+
+# 如果之前在游离状态有未提交的修改，需要先创建临时分支保存
+git branch temp <commit-hash>
+git checkout main
+git cherry-pick <commit-hash>
+
+# 推送到远程
+git push origin main
+```
+
+### 推送代码步骤总结
+
+| 步骤 | 命令 | 说明 |
+|------|------|------|
+| 1 | `cd fake-wechat` | 进入 submodule 目录 |
+| 2 | `git checkout main` | 切换到开发分支 |
+| 3 | `git pull origin main` | 拉取最新代码 |
+| 4 | `git add .` | 暂存修改 |
+| 5 | `git commit -m "msg"` | 提交代码 |
+| 6 | `git push origin main` | 推送到远程 |
+| 7 | `cd ..` | 返回父仓库 |
+| 8 | `git add fake-wechat` | 暂存 submodule 指针变更 |
+| 9 | `git commit -m "Update submodule"` | 提交父仓库 |
+| 10 | `git push` | 推送父仓库 |
 
 参考文档
 
