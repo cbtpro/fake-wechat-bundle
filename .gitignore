@@ -1,2 +1,11 @@
 .history/
 .DS_Store
+
+# pnpm
+node_modules/
+.pnpm-debug.log
+
+# sub-project lockfiles (root pnpm-lock.yaml should be committed)
+fake-wechat-server/pnpm-lock.yaml
+fake-wechat/pnpm-lock.yaml
+

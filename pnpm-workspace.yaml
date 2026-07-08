@@ -1,0 +1,3 @@
+packages:
+  - fake-wechat-server
+  - fake-wechat

@@ -1,0 +1,30 @@
+{
+  "name": "fake-wechat-bundle",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.14.0",
+  "scripts": {
+    "install": "pnpm install",
+    "install:all": "pnpm install",
+    "install:server": "pnpm install --filter fake-wechat-server",
+    "install:client": "pnpm install --filter fake-wechat",
+    "dev": "pnpm run --parallel dev",
+    "dev:server": "pnpm --filter fake-wechat-server run start:dev",
+    "dev:client": "pnpm --filter fake-wechat run dev",
+    "build": "pnpm --filter fake-wechat-server run build && pnpm --filter fake-wechat run build",
+    "build:server": "pnpm --filter fake-wechat-server run build",
+    "build:client": "pnpm --filter fake-wechat run build",
+    "start": "pnpm --filter fake-wechat-server run start",
+    "lint": "pnpm run --parallel lint",
+    "lint:server": "pnpm --filter fake-wechat-server run lint",
+    "lint:client": "pnpm --filter fake-wechat run lint",
+    "format": "pnpm run --parallel format",
+    "format:server": "pnpm --filter fake-wechat-server run format",
+    "format:client": "pnpm --filter fake-wechat run format",
+    "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm --filter fake-wechat-server exec rm -rf node_modules && pnpm --filter fake-wechat exec rm -rf node_modules"
+  },
+  "workspaces": [
+    "fake-wechat-server",
+    "fake-wechat"
+  ]
+}

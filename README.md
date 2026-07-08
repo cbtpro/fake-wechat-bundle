@@ -20,6 +20,53 @@ git submodule add git@github.com:cbtpro/fake-wechat.git
 
 默认情况下，子模块会将子项目放到一个与仓库同名的目录中，例如 `fake-wechat-server` 和 `fake-wechat`。
 
+## Monorepo 开发模式
+
+项目支持使用 pnpm monorepo 模式进行开发，同时保持子模块可以单独开发。
+
+### 环境要求
+
+- Node.js >= 18
+- pnpm >= 9.14.0
+
+### Script 命令
+
+| 命令 | 说明 |
+|------|------|
+| `pnpm install` | 安装所有子项目依赖 |
+| `pnpm install:all` | 安装所有子项目依赖（等同于 install） |
+| `pnpm install:server` | 仅安装服务端依赖 |
+| `pnpm install:client` | 仅安装客户端依赖 |
+| `pnpm dev` | 同时启动服务端和客户端（并行模式） |
+| `pnpm dev:server` | 仅启动服务端开发模式 |
+| `pnpm dev:client` | 仅启动客户端开发模式 |
+| `pnpm build` | 构建所有项目 |
+| `pnpm build:server` | 仅构建服务端 |
+| `pnpm build:client` | 仅构建客户端 |
+| `pnpm start` | 启动服务端（生产模式） |
+| `pnpm lint` | 运行所有项目的 lint |
+| `pnpm lint:server` | 仅运行服务端的 lint |
+| `pnpm lint:client` | 仅运行客户端的 lint |
+| `pnpm format` | 格式化所有项目代码 |
+| `pnpm format:server` | 仅格式化服务端代码 |
+| `pnpm format:client` | 仅格式化客户端代码 |
+| `pnpm clean` | 清理所有项目的 node_modules |
+
+### 单独开发子模块
+
+子模块仍然可以作为独立项目开发：
+
+```shell
+# 进入子模块目录
+cd fake-wechat-server
+
+# 使用 npm 安装依赖（子模块独立模式）
+npm install
+
+# 启动开发
+npm run start:dev
+```
+
 ## 更新 Submodule
 
 ### 初始化与基础更新
