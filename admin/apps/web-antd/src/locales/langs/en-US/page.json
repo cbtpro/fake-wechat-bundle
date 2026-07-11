@@ -1,0 +1,39 @@
+{
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "codeLogin": "Code Login",
+    "qrcodeLogin": "Qr Code Login",
+    "forgetPassword": "Forget Password",
+    "profile": "Profile"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "analytics": "Analytics",
+    "workspace": "Workspace"
+  },
+  "splash": {
+    "title": "Splash Config",
+    "list": "Splash List",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Confirm delete?",
+    "type": "Type",
+    "titleField": "Title",
+    "content": "Content",
+    "imageUrl": "Image URL",
+    "linkUrl": "Link URL",
+    "duration": "Duration(seconds)",
+    "sortOrder": "Sort Order",
+    "status": "Status",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "splash": "Splash",
+    "ad": "Advertisement",
+    "active": "Active",
+    "inactive": "Inactive",
+    "saveSuccess": "Saved successfully",
+    "deleteSuccess": "Deleted successfully"
+  }
+}

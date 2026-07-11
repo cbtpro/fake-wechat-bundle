@@ -9,3 +9,6 @@ node_modules/
 fake-wechat-server/pnpm-lock.yaml
 fake-wechat/pnpm-lock.yaml
 
+# admin (vben v5 has its own pnpm workspace, keep its lockfile local)
+admin/pnpm-lock.yaml
+

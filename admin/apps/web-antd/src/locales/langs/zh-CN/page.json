@@ -1,0 +1,39 @@
+{
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "codeLogin": "验证码登录",
+    "qrcodeLogin": "二维码登录",
+    "forgetPassword": "忘记密码",
+    "profile": "个人中心"
+  },
+  "dashboard": {
+    "title": "概览",
+    "analytics": "分析页",
+    "workspace": "工作台"
+  },
+  "splash": {
+    "title": "首屏配置",
+    "list": "首屏列表",
+    "create": "新增配置",
+    "edit": "编辑配置",
+    "delete": "删除配置",
+    "confirmDelete": "确定删除该配置？",
+    "type": "类型",
+    "titleField": "标题",
+    "content": "内容",
+    "imageUrl": "图片URL",
+    "linkUrl": "跳转链接",
+    "duration": "显示时长(秒)",
+    "sortOrder": "排序",
+    "status": "状态",
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "splash": "首屏配置",
+    "ad": "广告配置",
+    "active": "启用",
+    "inactive": "禁用",
+    "saveSuccess": "保存成功",
+    "deleteSuccess": "删除成功"
+  }
+}
